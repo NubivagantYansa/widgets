@@ -16,6 +16,7 @@ const Search = () => {
     };
   }, [term]);
 
+  //update the  debouncedTerm to avoid the request is made too soon and too often
   useEffect(() => {
     const search = async () => {
       const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
